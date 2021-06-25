@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Loch Ness Monster",
+        "description": "A dinosaur??? living in the lakes of scotland",
+        "location": "Loh Ness, Scotland",
+        "img": "https://ca-times.brightspotcdn.com/dims4/default/908a2ed/2147483647/strip/true/crop/512x452+0+0/resize/840x742!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F0b%2Fd5%2F893b887a7278747eb4eaf383de94%2Fsdut-file-this-is-an-undated-file-p-20160824",
+        "confirmed": false
+    },
+    {
+        "name": "Bunyip",
+        "description": "The Bunyip is a creature from Australian Aboriginal mythology, said to lurk in swamps, billabongs, creeks, riverbeds, and waterholes. ",
+        "location": "Australia",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bunyip_1890.jpg/440px-Bunyip_1890.jpg",
+        "confirmed": false
+    }
+]

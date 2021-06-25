@@ -3,7 +3,8 @@ const Crypt = require('../models/Cryptid')
 const router = express.Router()
 
 router.get('/', (req,res)=>{
-    res.send("hello")
+    Crypt.find({})
+    .then((cryptids) => res.render('../views/index.ejs', {cryptids}))
 })
 
 module.exports = router
