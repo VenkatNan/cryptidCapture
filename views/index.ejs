@@ -7,11 +7,14 @@
     <title>Capture Cryptids!</title>
 </head>
 <body>
-
+    <a href="/newCryptid"> Detail your findings!</a>
     <div>
         <ul>
             <% cryptids.forEach(crypt => { %>
-                <li> <%= crypt.name %> </li>
+                <li><a href="/<%=crypt._id%>"> <%= crypt.name %> </a>
+                    <img src="<%=crypt.img%>" style="width: 100px;height: auto;">
+                </li>
+
             <%}); %>
            
         </ul>

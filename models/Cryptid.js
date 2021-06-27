@@ -6,6 +6,10 @@ const cryptSchema = new mongoose.Schema({
     location: {type:String, require:true},
     img: String,
     confirmed: Boolean,
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
 
 });
 

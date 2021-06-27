@@ -1,9 +1,8 @@
-const mongoose = require('../dbs/connection');
+const mongoose = require('../db/connection');
 
 const userSchema = new mongoose.Schema({
-    username: {type:String, require:true},
+    name: {type:String, require:true},
     email: {type:String, require:true},
-    cryptids:[String],
     date: { type: Date, default: Date.now },
 
 });
