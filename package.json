@@ -1,0 +1,30 @@
+{
+  "name": "cryptidCapture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.14",
+    "mongodb": "^3.6.9",
+    "method-override": "^3.0.0",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VenkatNan/cryptidCapture.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VenkatNan/cryptidCapture/issues"
+  },
+  "homepage": "https://github.com/VenkatNan/cryptidCapture#readme"
+}
