@@ -33,11 +33,9 @@ router.get('/:id/edit', (req, res) => {
 });
 
 router.put('/:id', (req, res) =>{
-    Crypt.updateOne({_id: req.params.id}, req.body)
-    .then((cryptid) => 
-    Crypt.find({}).then( cryptids => {
-        res.json(cryptids)
-    }) )
+    Crypt.findOneAndUpdate({_id:req.params.id},req.body,{new:true}) 
+    .then((cryptid) => {
+        res.render('../views/show', {cryptid})})
     .catch(error => console.error(error))
 })
 

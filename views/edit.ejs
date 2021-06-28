@@ -10,17 +10,17 @@
 <body>
     <h1>Edit </h1>
     <form method="POST" action="/<%=cryptid._id%>?_method=put" >
-        <input type="text" value="<%=cryptid.name%>">
+        <input name='name' type="text" value="<%=cryptid.name%>">
         
         <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">Description</span>
             </div>
-            <input class="form-control" aria-label="With textarea" value="<%=cryptid.description%>">
+            <input name='description' class="form-control" value="<%=cryptid.description%>">
           </div>
    
         <p>confirmed sighting? </p>
-        <input type="checkbox" value="<%=cryptid.confirmation%>">
+        <input name='confirmation' type="checkbox" value="<%=cryptid.confirmation%>">
         <a href="/<%=cryptid._id%>"> cancel</a>
         <input type="submit" value="change cryptid?">
     </form>
