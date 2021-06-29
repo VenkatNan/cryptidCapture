@@ -12,6 +12,10 @@
     <p> <%=cryptid.description%> </p>
     <p>Proof of Existance? : <%=cryptid.confirmed%> </p>
 
+    <form method="DELETE" action="/<%=cryptid._id%>?_method=put">
+        <input type="submit" value="delete cryptid?">
+    </form>
+
     <a href="/<%=cryptid._id%>/edit"> Edit <%= cryptid.name %> ?</a>
 
 </body>

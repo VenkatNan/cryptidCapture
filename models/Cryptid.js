@@ -1,9 +1,9 @@
 const mongoose = require('../db/connection');
 
 const cryptSchema = new mongoose.Schema({
-    name: {type:String, require:true},
+    name: {type:String},
     description: String,
-    location: {type:String, require:true},
+    location: {type:String},
     img: String,
     confirmed: Boolean,
     owner: {

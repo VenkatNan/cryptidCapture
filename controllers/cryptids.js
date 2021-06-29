@@ -7,13 +7,14 @@ router.get('/', (req,res)=>{
     .then((cryptids) => res.render('../views/index', {cryptids}))
 })
 
-router.post('/'),(req,res)=>{
-    Crypt.create(req.body).then(cryptid => {
+router.post('/',(req,res)=>{
+    Crypt.create(req.body,{new:true})
+    .then(cryptid => {
         Crypt.find({})
         .then(cryptids => {res.json(cryptids) })
     })
     .catch(error => console.error(error))
-}
+})
 
 router.get('/newCryptid', (req, res) => {
     res.render('../views/newCryptid.ejs');

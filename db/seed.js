@@ -10,7 +10,6 @@ const seedData = require('./seedData.json')
     //       seedData.map((cryptid) => ({ ...cryptid, owner: user._id }))
     //     ).then((cryptids) => 
 
-
 Cryptid.deleteMany({})
 .then(() => Cryptid.insertMany(seedData))
     .catch(console.error)
