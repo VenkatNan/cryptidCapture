@@ -6,22 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="shortcut icon" href="#">
+    <style>
+        body{
+            background: url(https://static.tumblr.com/26b33059bc17ebf55b8c2490614457fd/uc03lii/Qbxp58g0c/tumblr_static_tumblr_static_efj7ltcapr4k0w80kkokwkks8_focused_v3.jpg);
+            height: 775px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgb(3, 36, 34);}
+        #logo{
+            height: 50px; 
+            width: auto;
+            border-radius: 30px;
+        }
+        h3{color: rgb(93, 190, 194);}
+
+        #container {
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 1fr;
+            grid-column-gap: 10px;
+            width:700px;
+            margin: 10px;
+        }
+        #cryptImg{
+            width: auto;
+            height: 200px;
+        }
+    </style>
     <title>Capture Cryptids!</title>
 </head>
 <body>
-    <a href="/newCryptid"> Detail your findings!</a>
-    <div>
-        <ul style="list-style-type:none;">
-            <% cryptids.forEach(crypt => { %>
-                <li><a href="/<%=crypt._id%>"> <%= crypt.name %> </a>
-                    <img src="<%=crypt.img%>" style="width: 100px;height: auto;">
-                </li>
 
-            <%}); %>
-           
-        </ul>
-        
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand"><h3>All Cryptids Logged</h3></a>
+          <a class="btn btn-outline-dark my-2 my-sm-0" type="submit" href="/"><img id ="logo" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e05abb66901743.5b272edfa4e73.png">
+            <a href="/newCryptid" class="btn btn-info">New</a>
+        </form>
+      </nav>
+      <div id="container">
+        <% cryptids.forEach(crypt => { %>
+            <div class="card text-center text-white bg-dark mb-3" style="max-width: 18rem;">
+                <img id="cryptImg" class="card-img-top" src="<%=crypt.img%>" alt="Card image cap">
+
+                <div class="card-header">
+                    <a class="btn btn-outline-info" href="/<%=crypt._id%>"> <%=crypt.name%> </a>
+
+                    <form method="POST" action="/<%=crypt._id%>?_method=DELETE">
+                        <input class="btn btn-danger" type="submit" value="Delete">
+                    </form>
+                </div>
+            </div>
+        <%}); %>
     </div>
+
     
 </body>
 </html>

@@ -6,25 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="shortcut icon" href="#">
-    <title>Documentd a new Cryptid?</title>
+    <title>Caught a Crazy Creature?</title>
 </head>
-<body>
-<h1>New Cryptid Spotted?</h1>
-    <form method="POST" action="/?_method=POST">
-        <input name='name' type="text" value="Name">
-        <input name='img' type="text" value="Image URL">
-        <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Description</span>
-            </div>
-            <input name='description' class="form-control" value="Description">
-          </div>
-   
-        <p>confirmed sighting? </p>
-        <input name='confirmation' type="checkbox" value="false">
+<body style=
+"background: url(https://img.wallpapersafari.com/desktop/1920/1080/3/71/9VqgkB.jpg); 
+background-size: cover;
+height: 775px;
+background-position: center;
+background-repeat: no-repeat;">
 
-        <a href="/"> cancel</a>
-        <input type="submit" value="Submit Cryptid?">
+<nav class="navbar navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand"><h3 style="color: cadetblue;">New Cryptid Spotted?</h3></a>
+    <form class="form-inline"method="get" action="/">
+      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e05abb66901743.5b272edfa4e73.png" style=
+        "height: 50px; 
+        width: auto;
+        border-radius: 30px;">
+        </button>
     </form>
+  </nav>
+
+    <div class="card border-dark mb-3" style="max-width: 20rem;">
+        <form method="POST" action="/?_method=POST">
+            <div class="card-header"> 
+                <h2>Cryptid Caught?</h1> 
+            </div>
+            <div class="card-body text-dark">
+                
+                <input name='name' type="text" value=" ">
+                <label class="form-check-label">Name</label>
+                
+                <input name='img' type="text" value=" ">
+                <label class="form-check-label">Image</label>
+                
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text">Description</span>
+                    <input name='description' class="form-control" value=" ">
+                </div>
+                    
+        
+                <div class="form-check">
+                    <input name='confirmed' type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="confirmedCheck">Confirmed Sighting?</label>
+                </div>
+                
+            </div>
+            
+            
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a type="button" class="btn btn-danger" href="/">Cancel Cryptid</a>
+                <input type="submit" class="btn btn-outline-success" value="SubmitCryptid?">
+              </div>
+
+        </form>
+    </div>
 </body>
 </html>

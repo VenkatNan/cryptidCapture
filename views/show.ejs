@@ -6,20 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="shortcut icon" href="#">
+    <style>
+        body{
+            background: url(https://static.tumblr.com/26b33059bc17ebf55b8c2490614457fd/uc03lii/Qbxp58g0c/tumblr_static_tumblr_static_efj7ltcapr4k0w80kkokwkks8_focused_v3.jpg);
+            height: 775px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgb(3, 36, 34);}
+        #logo{
+            height: 50px; 
+            width: auto;
+            border-radius: 30px;}
+            
+        h3{color: rgb(93, 190, 194);}
+        #containor{
+            margin: auto;
+            margin-top: 50px;
+        }
+        </style>
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="/<%=cryptid._id%>?_method=DELETE">
-        <h1> <%= cryptid.name %> </h1>
-        <img src="<%=cryptid.img%>" style="height: 400px;width: auto;">
-        <p> <%=cryptid.description%> </p>
-        <p>Proof of Existance? : <%=cryptid.confirmed%> </p>
 
-   
-        <input type="submit" value="delete cryptid?">
-    </form>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand"> <h3><%= cryptid.name %></h3> </a>
+        <form class="form-inline"method="get" action="/">
+          <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><img id="logo" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e05abb66901743.5b272edfa4e73.png">
+            </button>
+        </form>
+        <a href="/newCryptid" class="btn btn-info">New</a>
+      </nav>
+    
+        
 
-    <a href="/<%=cryptid._id%>/edit"> Edit <%= cryptid.name %> ?</a>
-    <a href="/">Home</a>
+    <div id="containor" class="card text-center text-white bg-dark mb-3" style="width: 18rem;">
+        <img class="card-img-top" src="<%=cryptid.img%>">
+
+        <div class="card-body">
+          <h5 class="card-title"><%= cryptid.name %></h5>
+
+          <p class="card-text"><%=cryptid.description%> </p>
+
+          <p class="card-text"> Proof of Existance?<%=cryptid.confirmed%></p>
+          <a class="btn btn-outline-info" href="/<%=cryptid._id%>/edit"> Edit <%= cryptid.name %> ?</a>
+        </div>
+        
+        <div class="card-footer text-muted">
+            <form method="POST" action="/<%=cryptid._id%>?_method=DELETE">
+                <input class="btn btn-outline-danger" type="submit" value="delete cryptid?">
+            </form>
+        </div>
+      </div>
+
 </body>
 </html>

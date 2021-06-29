@@ -5,26 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+    #center {
+        margin: auto;
+        margin-top: 30px;
+        width: 30%;
+        padding: 10px;}
+    body{
+        background: url(https://img.wallpapersafari.com/desktop/1920/1080/3/71/9VqgkB.jpg); 
+        background-size: cover;
+        height: 775px;
+        background-position: center;
+        background-repeat: no-repeat;}
+        #logo{
+            height: 50px; 
+            width: auto;
+            border-radius: 30px;
+        }
+        h3{color: rgb(93, 190, 194);}
+      </style>
+
     <link rel="shortcut icon" href="#">
     <title>Document</title>
 </head>
 <body>
-    <h1>Edit </h1>
-    <form method="POST" action="/<%=cryptid._id%>?_method=PUT" >
-        <input name='name' type="text" value="<%=cryptid.name%>">
-        <input name='img' type="text" value="<%=cryptid.img%>">
-        <div class="input-group">
-            <div class="input-group-prepend">
-            
-              <span class="input-group-text">Description</span>
-            </div>
-            <input name='description' class="form-control" value="<%=cryptid.description%>">
-          </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand"><h3>Edit <%= cryptid.name %></h3></a>
+        <a href="/newCryptid" class="btn btn-info">New</a>
+        <form class="form-inline"method="get" action="/">
+            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e05abb66901743.5b272edfa4e73.png" id = "logo">
+              </button>
+          </form>
+      </nav>
    
-        <p>confirmed sighting? </p>
-        <input name='confirmation' type="checkbox" value="<%=cryptid.confirmation%>">
-        <a href="/<%=cryptid._id%>"> cancel</a>
-        <input type="submit" value="change cryptid?">
-    </form>
+    <div id="center" class="card text-white bg-dark mb-3">
+        <div class="card-header">Edit <%= cryptid.name %></div>
+            <div class="card-body" style="padding: 10px;">
+                <form method="POST" action="/<%=cryptid._id%>?_method=PUT" >
+                    
+                    <input name='name' type="text" value="<%=cryptid.name%>">
+                    <label class="form-check-label">Name</label>
+
+                    <input name='img' type="text" value="<%=cryptid.img%>">
+                    <label class="form-check-label">Image Url</label>
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        
+                        <span class="input-group-text">Description</span>
+                        </div>
+                        <input name='description' class="form-control" value="<%=cryptid.description%>">
+                    </div>
+            
+                    <label class="form-check-label">Confirmation of Existance?</label>
+                    <input name='confirmation' type="checkbox" value="<%=cryptid.cconfirmed%>">
+
+                    <div class="card-body text-secondary">
+                        <a href="/<%=cryptid._id%>" class="btn btn-danger"> cancel</a>
+                        <input type="submit" value="change cryptid?"class="btn btn-info">
+                    </div>
+                </form>
+            </div>
+    </div>
 </body>
 </html>

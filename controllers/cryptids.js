@@ -7,19 +7,19 @@ router.get('/', (req,res)=>{
     .then((cryptids) => res.render('../views/index', {cryptids}))
 })
 
-router.post('/',(req,res)=>{
-    console.log(req.body);
+router.post('/',(req,res,error)=>{
     Crypt.create({_id:req.body.id},req.body,{new:true})
         .then(cryptids => {res.json(cryptids) })
         .then(res.redirect('/'))
         .catch(error => console.error(error))
-})
+    }
+)
 
 router.get('/newCryptid', (req, res) => {
     res.render('../views/newCryptid.ejs');
    });
 
-   router.put('/:id', (req, res) =>{
+   router.put('/:id', (req, res,error) =>{
     Crypt.findOneAndUpdate({_id:req.params.id},req.body,{new:true}) 
     .then((cryptid) => {
         res.render('../views/show', {cryptid})})
@@ -34,7 +34,7 @@ router.get('/:id', (req,res)=>{
 
 router.delete('/:id', (req,res) => {
     let id = req.params.id
-    console.log(id);
+    // console.log(id);
     Crypt.findByIdAndRemove( id)
     .then (() => res.redirect('/'))
 })
@@ -42,7 +42,6 @@ router.delete('/:id', (req,res) => {
 router.get('/:id/edit', (req, res) => {
     Crypt.findById(req.params.id)
     .then((cryptid) => res.render('../views/edit.ejs', {cryptid}))
-
 });
 
 
