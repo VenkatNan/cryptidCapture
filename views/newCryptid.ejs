@@ -9,7 +9,21 @@
 <body>
 <h1>New Cryptid Spotted?</h1>
 <form>
-    <input>
+    <form method="PUT" action="/<%=cryptid._id%>?_method=put" >
+        <input name='name' type="text" value="Name">
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Description</span>
+            </div>
+            <input name='description' class="form-control" value="Description">
+          </div>
+   
+        <p>confirmed sighting? </p>
+        <input name='confirmation' type="checkbox" value="false">
+        <a href="/"> cancel</a>
+
+        <input type="submit" value="Submit Cryptid?">
+    </form>
 </form>
 </body>
 </html>
