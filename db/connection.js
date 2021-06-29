@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const mongoURI = 
-    process.env.NODE_ENV === 'production'
+    process.env.NODE_ENV ==='production'
     ? process.env.DB_URL
-    : 'mongodb://localhost/cryptids'
+    :'mongodb://localhost/cryptids'
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
