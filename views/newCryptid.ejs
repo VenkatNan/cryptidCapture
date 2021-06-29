@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="#">
     <title>Documentd a new Cryptid?</title>
 </head>
 <body>
 <h1>New Cryptid Spotted?</h1>
-<form>
-    <form method="PUT" action="/?_method=put" >
+    <form method="POST" action="/?_method=POST">
         <input name='name' type="text" value="Name">
+        <input name='img' type="text" value="Image URL">
         <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">Description</span>
@@ -20,10 +22,9 @@
    
         <p>confirmed sighting? </p>
         <input name='confirmation' type="checkbox" value="false">
-        <a href="/"> cancel</a>
 
+        <a href="/"> cancel</a>
         <input type="submit" value="Submit Cryptid?">
     </form>
-</form>
 </body>
 </html>

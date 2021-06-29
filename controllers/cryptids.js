@@ -8,18 +8,23 @@ router.get('/', (req,res)=>{
 })
 
 router.post('/',(req,res)=>{
-    Crypt.create(req.body,{new:true})
-    .then(cryptid => {
-        Crypt.find({})
+    console.log(req.body);
+    Crypt.create({_id:req.body.id},req.body,{new:true})
         .then(cryptids => {res.json(cryptids) })
-    })
-    .catch(error => console.error(error))
+        .then(res.redirect('/'))
+        .catch(error => console.error(error))
 })
 
 router.get('/newCryptid', (req, res) => {
     res.render('../views/newCryptid.ejs');
    });
 
+   router.put('/:id', (req, res) =>{
+    Crypt.findOneAndUpdate({_id:req.params.id},req.body,{new:true}) 
+    .then((cryptid) => {
+        res.render('../views/show', {cryptid})})
+    .catch(error => console.error(error))
+})
 
 router.get('/:id', (req,res)=>{
     Crypt.findById(req.params.id)
@@ -33,20 +38,10 @@ router.get('/:id/edit', (req, res) => {
 
 });
 
-router.put('/:id', (req, res) =>{
-    Crypt.findOneAndUpdate({_id:req.params.id},req.body,{new:true}) 
-    .then((cryptid) => {
-        res.render('../views/show', {cryptid})})
-    .catch(error => console.error(error))
-})
+router.delete('/:id', (req,res,error) => {
+    Crypt.findByIdAndRemove({_id: req.params.id})
+    res.redirect('/')
 
-router.delete('/:id'), (req,res,next) => {
-    Crypt.findByIdAndDelete({_id: req.params.id}, req.body)
-    .then(cryptid => {
-        Crypt.find({})
-        .then(cryptids => {res.json(cryptids) })
-    })
-    .catch(error => console.error(error))
-}
+})
 
 module.exports = router

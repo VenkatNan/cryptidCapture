@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="#">
     <title>Document</title>
 </head>
 <body>
@@ -12,11 +14,11 @@
     <p> <%=cryptid.description%> </p>
     <p>Proof of Existance? : <%=cryptid.confirmed%> </p>
 
-    <form method="DELETE" action="/<%=cryptid._id%>?_method=put">
+    <form method="POST" action="/<%=cryptid._id%>?_method=DELETE">
         <input type="submit" value="delete cryptid?">
     </form>
 
     <a href="/<%=cryptid._id%>/edit"> Edit <%= cryptid.name %> ?</a>
-
+    <a href="/">Home</a>
 </body>
 </html>

@@ -1,16 +1,11 @@
 const mongoose = require('../db/connection');
 
 const cryptSchema = new mongoose.Schema({
-    name: {type:String},
+    name: String,
     description: String,
-    location: {type:String},
+    location:String,
     img: String,
     confirmed: Boolean,
-    owner: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }
-
 });
 
 const Cryptid = mongoose.model('Cryptid', cryptSchema);

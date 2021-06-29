@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="#">
     <title>Capture Cryptids!</title>
 </head>
 <body>
     <a href="/newCryptid"> Detail your findings!</a>
     <div>
-        <ul>
+        <ul style="list-style-type:none;">
             <% cryptids.forEach(crypt => { %>
                 <li><a href="/<%=crypt._id%>"> <%= crypt.name %> </a>
                     <img src="<%=crypt.img%>" style="width: 100px;height: auto;">

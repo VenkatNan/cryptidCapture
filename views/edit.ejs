@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="#">
     <title>Document</title>
 </head>
 <body>
     <h1>Edit </h1>
-    <form method="POST" action="/<%=cryptid._id%>?_method=put" >
+    <form method="POST" action="/<%=cryptid._id%>?_method=PUT" >
         <input name='name' type="text" value="<%=cryptid.name%>">
-        
+        <input name='img' type="text" value="<%=cryptid.img%>">
         <div class="input-group">
             <div class="input-group-prepend">
+            
               <span class="input-group-text">Description</span>
             </div>
             <input name='description' class="form-control" value="<%=cryptid.description%>">
