@@ -6,27 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="shortcut icon" href="#">
+    <style>
+        body{
+            background: url(https://img.wallpapersafari.com/desktop/1920/1080/3/71/9VqgkB.jpg); 
+            background-size: cover;
+            height: 775px;
+            background-position: center;
+            background-repeat: no-repeat;}
+        #logo{
+            height: 50px; 
+            width: auto;
+            border-radius: 30px;}
+            
+        h3{color: rgb(93, 190, 194);}
+        #container{
+            margin: auto;
+            margin-top: 50px;
+        }
+        </style>
     <title>Caught a Crazy Creature?</title>
 </head>
-<body style=
-"background: url(https://img.wallpapersafari.com/desktop/1920/1080/3/71/9VqgkB.jpg); 
-background-size: cover;
-height: 775px;
-background-position: center;
-background-repeat: no-repeat;">
+<body>
 
 <nav class="navbar navbar-dark bg-dark justify-content-between">
-    <a class="navbar-brand"><h3 style="color: cadetblue;">New Cryptid Spotted?</h3></a>
+    <a class="navbar-brand"><h3>New Cryptid Spotted?</h3></a>
     <form class="form-inline"method="get" action="/">
-      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e05abb66901743.5b272edfa4e73.png" style=
-        "height: 50px; 
-        width: auto;
-        border-radius: 30px;">
+      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><img id="logo" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e05abb66901743.5b272edfa4e73.png">
         </button>
     </form>
   </nav>
 
-    <div class="card border-dark mb-3" style="max-width: 20rem;">
+    <div id="container" class="card border-dark mb-3" style="max-width: 20rem;">
         <form method="POST" action="/?_method=POST">
             <div class="card-header"> 
                 <h2>Cryptid Caught?</h1> 
