@@ -9,7 +9,7 @@
     <style>
         body{
             background: url(https://static.tumblr.com/26b33059bc17ebf55b8c2490614457fd/uc03lii/Qbxp58g0c/tumblr_static_tumblr_static_efj7ltcapr4k0w80kkokwkks8_focused_v3.jpg);
-            height: 775px;
+            height: 900px;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -18,11 +18,15 @@
             height: 50px; 
             width: auto;
             border-radius: 30px;}
-            
+
         h3{color: rgb(93, 190, 194);}
         #containor{
             margin: auto;
             margin-top: 50px;
+        }
+        #cryptImg{
+            width: 20rem;
+            height: auto;
         }
         </style>
     <title>Document</title>
@@ -40,8 +44,8 @@
     
         
 
-    <div id="containor" class="card text-center text-white bg-dark mb-3" style="width: 18rem;">
-        <img class="card-img-top" src="<%=cryptid.img%>">
+    <div id="containor" class="card text-center text-white bg-dark mb-3" style="width: 20rem;">
+        <img id="cryptImg" class="card-img-top" src="<%=cryptid.img%>">
 
         <div class="card-body">
           <h5 class="card-title"><%= cryptid.name %></h5>
