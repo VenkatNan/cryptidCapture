@@ -32,16 +32,18 @@ router.get('/:id', (req,res)=>{
 
 })
 
+router.delete('/:id', (req,res) => {
+    let id = req.params.id
+    console.log(id);
+    Crypt.findByIdAndRemove( id)
+    .then (() => res.redirect('/'))
+})
+
 router.get('/:id/edit', (req, res) => {
     Crypt.findById(req.params.id)
     .then((cryptid) => res.render('../views/edit.ejs', {cryptid}))
 
 });
 
-router.delete('/:id', (req,res,error) => {
-    Crypt.findByIdAndRemove({_id: req.params.id})
-    res.redirect('/')
-
-})
 
 module.exports = router

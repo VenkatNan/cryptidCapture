@@ -9,12 +9,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> <%= cryptid.name %> </h1>
-    <img src="<%=cryptid.img%>" style="height: 400px;width: auto;">
-    <p> <%=cryptid.description%> </p>
-    <p>Proof of Existance? : <%=cryptid.confirmed%> </p>
-
     <form method="POST" action="/<%=cryptid._id%>?_method=DELETE">
+        <h1> <%= cryptid.name %> </h1>
+        <img src="<%=cryptid.img%>" style="height: 400px;width: auto;">
+        <p> <%=cryptid.description%> </p>
+        <p>Proof of Existance? : <%=cryptid.confirmed%> </p>
+
+   
         <input type="submit" value="delete cryptid?">
     </form>
 
