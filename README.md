@@ -18,7 +18,7 @@
 
 <img width="1060" alt="index screenshot" src="/views/img/indexScreenie.png">
 <img width="1060" alt="editing page screen shot" src="/views/img/editScreenie.png">
-<img width="1060" alt="create page screen shot" src="/views/img/newScreenie.png">
+<img width="1060" alt="create page screen shot" src="/views/img/newscreenie.png">
 
 
 ### Wireframes
